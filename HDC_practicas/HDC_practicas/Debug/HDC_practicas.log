@@ -1,2 +1,3 @@
-﻿  main_prac5.cpp
-  HDC_practicas.vcxproj -> C:\Users\Hugo_\OneDrive\Documentos\GitHub\HDC_clase\HDC_practicas\Debug\HDC_practicas.exe
+﻿  main_prac6.cpp
+c:\users\hugo_\documents\github\hdc_clase\hdc_practicas\hdc_practicas\main_prac6.cpp(38): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+  HDC_practicas.vcxproj -> C:\Users\Hugo_\Documents\GitHub\HDC_clase\HDC_practicas\Debug\HDC_practicas.exe

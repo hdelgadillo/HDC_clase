@@ -123,7 +123,7 @@
     <ClInclude Include="include\Main.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main_prac5.cpp" />
+    <ClCompile Include="main_prac6.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
