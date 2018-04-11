@@ -1,3 +1,8 @@
-﻿  main_prac6.cpp
-c:\users\hugo_\documents\github\hdc_clase\hdc_practicas\hdc_practicas\main_prac6.cpp(38): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
-  HDC_practicas.vcxproj -> C:\Users\Hugo_\Documents\GitHub\HDC_clase\HDC_practicas\Debug\HDC_practicas.exe
+﻿  practica7.1.cpp
+c:\users\hugo_\onedrive\documentos\github\hdc_clase\hdc_practicas\hdc_practicas\practica7.1.cpp(38): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\hugo_\onedrive\documentos\github\hdc_clase\hdc_practicas\hdc_practicas\practica7.1.cpp(57): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\hugo_\onedrive\documentos\github\hdc_clase\hdc_practicas\hdc_practicas\practica7.1.cpp(61): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\hugo_\onedrive\documentos\github\hdc_clase\hdc_practicas\hdc_practicas\practica7.1.cpp(65): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\hugo_\onedrive\documentos\github\hdc_clase\hdc_practicas\hdc_practicas\practica7.1.cpp(69): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\hugo_\onedrive\documentos\github\hdc_clase\hdc_practicas\hdc_practicas\practica7.1.cpp(73): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+  HDC_practicas.vcxproj -> C:\Users\Hugo_\OneDrive\Documentos\GitHub\HDC_clase\HDC_practicas\Debug\HDC_practicas.exe
