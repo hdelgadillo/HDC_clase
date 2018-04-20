@@ -18,7 +18,7 @@
     <ClCompile Include="texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_prac8_texto.cpp">
+    <ClCompile Include="practica9_transparencia.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
