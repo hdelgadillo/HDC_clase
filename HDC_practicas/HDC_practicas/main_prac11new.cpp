@@ -1,9 +1,9 @@
-//Semestre 2018-2
+//Semestre 2017 - 2
 //************************************************************//
 //************************************************************//
-//************** Alumno (s):Delgadillo Cortez Hugo  *********************************//
+//************** Alumno (s): *********************************//
 //*************											******//
-//*************		Version de Visual studio 2017									******//
+//*************											******//
 //************************************************************//
 //************************************************************//
 
@@ -19,8 +19,9 @@ static GLuint ciudad_display_list;	//Display List for the Monito
 
 //NEW// Keyframes
 //Variables de dibujo y manipulacion
-float posX =0, posY = 2.5, posZ =-3.5, rotRodIzq = 0,rotBrIzq=0, rotBrDer = 0, rotRodDer=0;
+float posX =0, posY = 2.5, posZ =-3.5, rotRodIzq = 0, rotBrIzq = 0,  rotInc2=0, rotBrDer=0, rotInc3=0, rotRodDer = 0, rotRod4 = 0;
 float giroMonito = 0;
+
 
 #define MAX_FRAMES 5
 int i_max_steps = 90;
@@ -36,14 +37,13 @@ typedef struct _frame
 	float incY;		//Variable para IncrementoY
 	float incZ;		//Variable para IncrementoZ
 	float rotRodIzq;
-	float rotInc;
 	float rotBrIzq;
+	float rotInc;
 	float rotInc2;
-	float rotBrDer;
-	float rotRodDer;
-	float rotInc4;
-	float rotInc3;
-
+	float rotBrDer = 0;
+	float rotInc3 = 0;
+	float rotRodDer = 0;
+	float rotInc4 = 0;
 	float giroMonito;
 	float giroMonitoInc;
 	
@@ -176,7 +176,7 @@ void saveFrame ( void )
 	KeyFrame[FrameIndex].rotRodIzq=rotRodIzq;
 	KeyFrame[FrameIndex].rotBrIzq = rotBrIzq;
 	KeyFrame[FrameIndex].rotBrDer = rotBrDer;
-	KeyFrame[FrameIndex].rotRodDer = rotBrDer;
+	KeyFrame[FrameIndex].rotRodDer = rotRodDer;
 	KeyFrame[FrameIndex].giroMonito=giroMonito;
 			
 	FrameIndex++;
@@ -288,9 +288,11 @@ void monito()
 			glTranslatef(1.25, 0.65, 0);
 			fig7.esfera(0.5, 12, 12, 0);
 			glPushMatrix();
-			glRotatef(15 + rotBrDer, 0, 0, 1);
 				glTranslatef(0.25, 0, 0);
-				glRotatef(-45, 0, 1, 0); 
+				glRotatef(-45, 0, 1, 0);
+				//
+				glRotatef(25 + rotBrDer, 0, 0, 1);
+
 				glTranslatef(0.75, 0, 0);
 				fig7.prisma(0.7, 1.5, 0.7, 0);
 			glPopMatrix();
@@ -300,10 +302,10 @@ void monito()
 			glTranslatef(-1.25, 0.65, 0);
 			fig7.esfera(0.5, 12, 12, 0);
 			glPushMatrix();
-			glRotatef(15 + rotBrIzq, 0, 0, 1);
 				glTranslatef(-0.25, 0, 0);
 				glRotatef(45, 0, 1, 0); 
-				glRotatef(25, 0, 0, 1);
+				//modificar rotacion
+				glRotatef(25 + rotBrIzq, 0, 0, 1);
 				glRotatef(25, 1, 0, 0); 
 				glTranslatef(-0.75, 0, 0);
 				fig7.prisma(0.7, 1.5, 0.7, 0);
@@ -322,9 +324,8 @@ void monito()
 				fig7.prisma(1.0, 0.5, 1, 0);
 
 				glPushMatrix();
-				glRotatef(15 + rotRodDer, 1, 0, 0);
 					glTranslatef(0, -0.5, 0);
-					glRotatef(15, 1, 0, 0);
+					glRotatef(15+rotRodDer, 1, 0, 0);
 					glTranslatef(0, -0.75, 0);
 					fig7.prisma(1.5, 0.5, 1, 0);
 
@@ -1267,11 +1268,13 @@ void InitGL ( GLvoid )     // Inicializamos parametros
 		KeyFrame[i].incY =0;
 		KeyFrame[i].incZ =0;
 		KeyFrame[i].rotRodIzq =0;
-		KeyFrame[i].rotBrIzq = 0;
-		KeyFrame[i].rotInc2 = 0;
 		KeyFrame[i].rotInc =0;
-		KeyFrame[i].rotBrDer = 0;
+		KeyFrame[i].rotInc2 = 0;
+		KeyFrame[i].rotBrIzq = 0;
+		KeyFrame[i].rotBrDer = 0 ;
 		KeyFrame[i].rotInc3 = 0;
+		KeyFrame[i].rotRodDer = 0;
+		KeyFrame[i].rotInc4 = 0;
 		KeyFrame[i].giroMonito =0;
 		KeyFrame[i].giroMonitoInc =0;
 	}
@@ -1580,23 +1583,12 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 			printf("%f \n", rotRodIzq);
 			break;
 
-		case 'n':
-			rotRodDer++;
-			printf("%f \n", rotRodIzq);
-			break;
-
-		case 'N':
-			rotRodDer--;
-			printf("%f \n", rotRodIzq);
-			break;
-
-
 		case 'p':						
 			giroMonito++;
 			break;
 
 		case 'P':						
-			giroMonito--;
+			rotBrIzq++;
 			break;
 
 		case 'i':
@@ -1608,12 +1600,21 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 			break;
 
 		case 'o':
-			rotBrDer++;
+			 rotBrDer ++;
 			break;
 
 		case 'O':
-			rotBrDer--;
+			rotBrDer --;
 			break;
+		
+		case 'v':
+			rotRodDer++;
+			break;
+
+		case 'V':
+			rotRodDer--;
+			break;
+
 		case 27:        // Cuando Esc es presionado...
 			exit ( 0 );   // Salimos del programa
 			break;        
